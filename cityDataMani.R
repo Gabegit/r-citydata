@@ -110,7 +110,20 @@ pcm$scores
 dat.geni <- read.csv("citypanel.csv")
 dat.geni <- transform(dat.geni,provid=substr(cityid, 1, 2)) #create province id dummy var
 # test to construct the theil index
-th <- function (x){
-  th <- x/mean(x)
+Theil <- function (x, parameter = 0) 
+{
+  if (is.null(parameter)) 
+    parameter <- 0
+  if (parameter == 0) {
+    x <- x[!(x == 0)]
+    Th <- x/mean(x)
+    Th <- sum(x * log(Th))
+    Th <- Th/sum(x)
+  }
+  else {
+    Th <- exp(mean(log(x)))/mean(x)
+    Th <- -log(Th)
+  }
+  Th
 }
 
