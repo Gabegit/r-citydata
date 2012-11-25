@@ -1,6 +1,81 @@
 library(XLConnect)
 
 setwd("E:/data/1995_2011_city/city_convergence")
+
+
+# read and append data from excel files -----------------------------------
+
+## read excel files================================================================
+  # wb11=loadWorkbook("2011.xls", create = TRUE)
+  # data11=readWorksheet(wb11, sheet = "data", startRow = 6, 
+  #                    endRow = 321,startCol = 1, endCol = 240)
+  # wb10=loadWorkbook("2010.xls", create = TRUE)
+  # data10=readWorksheet(wb10, sheet = "data", startRow = 5, 
+  #                     endRow = 320,startCol = 1, endCol = 239)
+  # wb09=loadWorkbook("2009.xls", create = TRUE)
+  # data09=readWorksheet(wb09, sheet = "data", startRow = 4, 
+  #                      endRow = 319,startCol = 1, endCol = 239)
+  # wb08=loadWorkbook("2008.xls", create = TRUE)
+  # data08=readWorksheet(wb08, sheet = "data", startRow = 6, 
+#                      endRow = 321,startCol = 1, endCol = 244)
+# wb08=loadWorkbook("2008.xls", create = TRUE)
+# data08=readWorksheet(wb08, sheet = "data", startRow = 6, 
+#                      endRow = 321,startCol = 1, endCol = 244)
+# wb07=loadWorkbook("2007.xls", create = TRUE)
+# data07=readWorksheet(wb07, sheet = "data", startRow =6, 
+#                      endRow = 321,startCol =1, endCol = 254)
+# wb06=loadWorkbook("2006.xls", create = TRUE)
+# data06=readWorksheet(wb06, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =1, endCol = 254)
+# wb05=loadWorkbook("2005.xls", create = TRUE)
+# data05=readWorksheet(wb05, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =1, endCol = 184)
+# wb04=loadWorkbook("2004.xls", create = TRUE)
+# data04=readWorksheet(wb04, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =2, endCol = 254)
+# wb03=loadWorkbook("2003.xls", create = TRUE)
+# data03=readWorksheet(wb03, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =2, endCol = 210)
+# wb02=loadWorkbook("2002.xls", create = TRUE)
+# data02=readWorksheet(wb02, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =2, endCol = 207)
+# wb01=loadWorkbook("2001.xls", create = TRUE)
+# data01=readWorksheet(wb01, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =2, endCol = 177)
+# wb00=loadWorkbook("2000.xls", create = TRUE)
+# data00=readWorksheet(wb00, sheet = "data", startRow =4, 
+#                      endRow =319,startCol =2, endCol=203)
+# wb99=loadWorkbook("1999.xls", create = TRUE)
+# data99=readWorksheet(wb99, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =3, endCol = 182)
+# wb98=loadWorkbook("1998.xls", create = TRUE)
+# data98=readWorksheet(wb98, sheet = "data", startRow =5, 
+#                      endRow = 320,startCol =2, endCol = 191)
+# wb97=loadWorkbook("1997.xls", create = TRUE)
+# data97=readWorksheet(wb97, sheet = "data", startRow =4, 
+#                      endRow = 319,startCol =2, endCol = 151)
+# wb96=loadWorkbook("1996.xls", create = TRUE)
+# data96=readWorksheet(wb96, sheet = "data", startRow =4, 
+#                      endRow =319 ,startCol =2, endCol =177 )
+# wb95=loadWorkbook("1995.xls", create = TRUE)
+# data95=readWorksheet(wb95, sheet = "data", startRow =6, 
+#                      endRow = 321,startCol =2, endCol =240 )
+# ## append===============================
+# library(gtools)
+# data=smartbind(data11,data10,data09,data08,data07,data06,data05,data04,data03,data02,data01,data00
+#                ,data99,data98,data97,data96,data95)
+# 
+# # wb <- loadWorkbook("city95-10.xlsx", create = TRUE)
+# # createSheet(wb, name = "citydata")
+# # writeWorksheet(wb, data, sheet = "citydata", startRow = 1, startCol = 1)
+# # saveWorkbook(wb)
+# 
+# write.csv(data, "data.csv")
+
+
+# keep the variables ------------------------------------------------------
+
+
 data <- read.csv("data.csv")
 nomissing <- which(data$cityid != "NA")
 data1 <- data[nomissing, ]
