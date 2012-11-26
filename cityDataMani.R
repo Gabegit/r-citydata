@@ -7,69 +7,69 @@ setwd("E:/data/1995_2011_city/city_convergence")
 
 ## read excel files================================================================
   # wb11=loadWorkbook("2011.xls", create = TRUE)
-  # data11=readWorksheet(wb11, sheet = "data", startRow = 6, 
+  # data11=readWorksheet(wb11, sheet = "data", startRow = 6,
   #                    endRow = 321,startCol = 1, endCol = 240)
   # wb10=loadWorkbook("2010.xls", create = TRUE)
-  # data10=readWorksheet(wb10, sheet = "data", startRow = 5, 
+  # data10=readWorksheet(wb10, sheet = "data", startRow = 5,
   #                     endRow = 320,startCol = 1, endCol = 239)
   # wb09=loadWorkbook("2009.xls", create = TRUE)
-  # data09=readWorksheet(wb09, sheet = "data", startRow = 4, 
+  # data09=readWorksheet(wb09, sheet = "data", startRow = 4,
   #                      endRow = 319,startCol = 1, endCol = 239)
   # wb08=loadWorkbook("2008.xls", create = TRUE)
-  # data08=readWorksheet(wb08, sheet = "data", startRow = 6, 
+  # data08=readWorksheet(wb08, sheet = "data", startRow = 6,
 #                      endRow = 321,startCol = 1, endCol = 244)
 # wb08=loadWorkbook("2008.xls", create = TRUE)
-# data08=readWorksheet(wb08, sheet = "data", startRow = 6, 
+# data08=readWorksheet(wb08, sheet = "data", startRow = 6,
 #                      endRow = 321,startCol = 1, endCol = 244)
 # wb07=loadWorkbook("2007.xls", create = TRUE)
-# data07=readWorksheet(wb07, sheet = "data", startRow =6, 
+# data07=readWorksheet(wb07, sheet = "data", startRow =6,
 #                      endRow = 321,startCol =1, endCol = 254)
 # wb06=loadWorkbook("2006.xls", create = TRUE)
-# data06=readWorksheet(wb06, sheet = "data", startRow =4, 
+# data06=readWorksheet(wb06, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =1, endCol = 254)
 # wb05=loadWorkbook("2005.xls", create = TRUE)
-# data05=readWorksheet(wb05, sheet = "data", startRow =4, 
+# data05=readWorksheet(wb05, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =1, endCol = 184)
 # wb04=loadWorkbook("2004.xls", create = TRUE)
-# data04=readWorksheet(wb04, sheet = "data", startRow =4, 
+# data04=readWorksheet(wb04, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =2, endCol = 254)
 # wb03=loadWorkbook("2003.xls", create = TRUE)
-# data03=readWorksheet(wb03, sheet = "data", startRow =4, 
+# data03=readWorksheet(wb03, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =2, endCol = 210)
 # wb02=loadWorkbook("2002.xls", create = TRUE)
-# data02=readWorksheet(wb02, sheet = "data", startRow =4, 
+# data02=readWorksheet(wb02, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =2, endCol = 207)
 # wb01=loadWorkbook("2001.xls", create = TRUE)
-# data01=readWorksheet(wb01, sheet = "data", startRow =4, 
+# data01=readWorksheet(wb01, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =2, endCol = 177)
 # wb00=loadWorkbook("2000.xls", create = TRUE)
-# data00=readWorksheet(wb00, sheet = "data", startRow =4, 
+# data00=readWorksheet(wb00, sheet = "data", startRow =4,
 #                      endRow =319,startCol =2, endCol=203)
 # wb99=loadWorkbook("1999.xls", create = TRUE)
-# data99=readWorksheet(wb99, sheet = "data", startRow =4, 
+# data99=readWorksheet(wb99, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =3, endCol = 182)
 # wb98=loadWorkbook("1998.xls", create = TRUE)
-# data98=readWorksheet(wb98, sheet = "data", startRow =5, 
+# data98=readWorksheet(wb98, sheet = "data", startRow =5,
 #                      endRow = 320,startCol =2, endCol = 191)
 # wb97=loadWorkbook("1997.xls", create = TRUE)
-# data97=readWorksheet(wb97, sheet = "data", startRow =4, 
+# data97=readWorksheet(wb97, sheet = "data", startRow =4,
 #                      endRow = 319,startCol =2, endCol = 151)
 # wb96=loadWorkbook("1996.xls", create = TRUE)
-# data96=readWorksheet(wb96, sheet = "data", startRow =4, 
+# data96=readWorksheet(wb96, sheet = "data", startRow =4,
 #                      endRow =319 ,startCol =2, endCol =177 )
 # wb95=loadWorkbook("1995.xls", create = TRUE)
-# data95=readWorksheet(wb95, sheet = "data", startRow =6, 
+# data95=readWorksheet(wb95, sheet = "data", startRow =6,
 #                      endRow = 321,startCol =2, endCol =240 )
 # ## append===============================
 # library(gtools)
 # data=smartbind(data11,data10,data09,data08,data07,data06,data05,data04,data03,data02,data01,data00
 #                ,data99,data98,data97,data96,data95)
-# 
+#
 # # wb <- loadWorkbook("city95-10.xlsx", create = TRUE)
 # # createSheet(wb, name = "citydata")
 # # writeWorksheet(wb, data, sheet = "citydata", startRow = 1, startCol = 1)
 # # saveWorkbook(wb)
-# 
+#
 # write.csv(data, "data.csv")
 
 
@@ -80,13 +80,13 @@ data <- read.csv("data.csv")
 nomissing <- which(data$cityid != "NA")
 data1 <- data[nomissing, ]
 
-needvars <- c("city", "cityid", "year", "pop", "worker", "rat_em_st", "rat_em_nd", "rat_em_rd", "empl_man", 
-              "area", "area_const", "gr_pop", "gdp", "gdp_per", "gr_gdp", "r_gdp_st", "r_gdp_nd", "r_gdp_rd", "ind_val", 
-              "total_fix", "fdi", "budget", "pay", "wage", "road_av", "high_col", "nmid_stu", "lit_stu", "gm_ind_hk", 
+needvars <- c("city", "cityid", "year", "pop", "worker", "rat_em_st", "rat_em_nd", "rat_em_rd", "empl_man",
+              "area", "area_const", "gr_pop", "gdp", "gdp_per", "gr_gdp", "r_gdp_st", "r_gdp_nd", "r_gdp_rd", "ind_val",
+              "total_fix", "fdi", "budget", "pay", "wage", "road_av", "high_col", "nmid_stu", "lit_stu", "gm_ind_hk",
               "sci_pay", "edu_pay", "inst_load", "saving", "n_working", "n_phone", "total_power", "c_huoyun")
 datacity <- data1[needvars]
 datacity$cityid <- as.character(datacity$cityid)
-datacity$isCap <- ifelse(substr(datacity$cityid, 3, 4) == "00" | substr(datacity$cityid, 3, 4) == "01", 1, 
+datacity$isCap <- ifelse(substr(datacity$cityid, 3, 4) == "00" | substr(datacity$cityid, 3, 4) == "01", 1,
                          0) #create capital city dummy
 print(datacity$isCap)
 
@@ -118,9 +118,9 @@ fdiord <- order(datacity$fdigdp, decreasing = TRUE)
 datacitytem <- datacity[fdiord, ]
 write.csv(datacitytem, "tem.csv")
 
-ccname <- c("pop", "worker", "rat_em_st", "rat_em_nd", "rat_em_rd", "empl_man", "area", "area_const", "gr_pop", 
-            "gdp", "gdp_per", "gr_gdp", "r_gdp_st", "r_gdp_nd", "r_gdp_rd", "ind_val", "total_fix", "fdi", "budget", 
-            "pay", "deficit", "wage", "road_av", "high_col", "nmid_stu", "lit_stu", "gm_ind_hk", "sci_pay", "edu_pay", 
+ccname <- c("pop", "worker", "rat_em_st", "rat_em_nd", "rat_em_rd", "empl_man", "area", "area_const", "gr_pop",
+            "gdp", "gdp_per", "gr_gdp", "r_gdp_st", "r_gdp_nd", "r_gdp_rd", "ind_val", "total_fix", "fdi", "budget",
+            "pay", "deficit", "wage", "road_av", "high_col", "nmid_stu", "lit_stu", "gm_ind_hk", "sci_pay", "edu_pay",
             "inst_load", "saving", "n_working", "n_phone", "total_power", "c_huoyun")
 av <- aggregate(datacity[ccname], by = list(cityid = datacity$cityid), mean, na.rm = TRUE)
 av$isCap <- ifelse(substr(av$cityid, 3, 4) == "00" | substr(av$cityid, 3, 4) == "01", 1, 0)
@@ -143,8 +143,8 @@ data_old <- readWorksheet(wbcity, sheet = "city-new", startRow = 2, endRow = 246
 datamerg <- merge(data_old, dataaver, "cityid")
 names(datamerg)
 datamerg <- transform(datamerg, r_em_manu = round(empl_man/worker * 100, 2))
-threshold <- c("prov", "cityid", "y", "gdp90", "gnAv", "primstu90", "highstu90", "noAgri90", "middstu90", 
-               "midStuPop", "invgdp", "fdigdpAv", "pop", "rat_em_st", "area", "gdp", "gdp_per", "gr_gdp", "road_av", 
+threshold <- c("prov", "cityid", "y", "gdp90", "gnAv", "primstu90", "highstu90", "noAgri90", "middstu90",
+               "midStuPop", "invgdp", "fdigdpAv", "pop", "rat_em_st", "area", "gdp", "gdp_per", "gr_gdp", "road_av",
                "n_phone", "total_power", "c_huoyun", "deficit", "paygdpAv", "high_col", "gm_ind_hk", "isCap", "regions")
 datathresh <- datamerg[threshold]
 datathresh$D_east <- (datathresh$regions == "1") * 1
@@ -177,7 +177,7 @@ pcm <- princomp(datpc, scores = TRUE)
 summary(pcm)
 plot(pcm)
 pcm$loading
-pcm$scores 
+pcm$scores
 
 
 # geni coefficent ---------------------------------------------------------
@@ -185,9 +185,9 @@ pcm$scores
 dat.geni <- read.csv("citypanel.csv")
 dat.geni <- transform(dat.geni,provid=substr(cityid, 1, 2)) #create province id dummy var
 # test to construct the theil index
-Theil <- function (x, parameter = 0) 
+Theil <- function (x, parameter = 0)
 {
-  if (is.null(parameter)) 
+  if (is.null(parameter))
     parameter <- 0
   if (parameter == 0) {
     x <- x[!(x == 0)]
@@ -201,4 +201,6 @@ Theil <- function (x, parameter = 0)
   }
   Th
 }
+
+th <- Theil(x)
 
